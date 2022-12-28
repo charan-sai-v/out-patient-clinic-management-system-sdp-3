@@ -1,0 +1,403 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <!--Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css" integrity="sha512-HHsOC+h3najWR7OKiGZtfhFIEzg5VRIPde0kB0bG2QRidTQqf+sbfcxCTB16AcFB93xMjnBIKE29/MjdzXE+qw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Patient - ADD Appointment</title>
+    <style>
+        @font-face { font-family: Arial !important; font-display: swap !important; }
+    </style>
+    <link rel="stylesheet" href="http://localhost:2022/css/bootstrap.min.css">
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        } @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");:root{--header-height: 3rem;--nav-width: 68px;--first-color: #0b2239;--first-color-light: #AFA5D9;--white-color: #F7F6FB;--body-font: 'Nunito', sans-serif;--normal-font-size: 1rem;--z-fixed: 100}  *,::before,::after{box-sizing: border-box}  body{position: relative;margin: var(--header-height) 0 0 0;padding: 0 1rem;font-family: var(--body-font);font-size: var(--normal-font-size);transition: .5s}  a{text-decoration: none}  .header{width: 100%;height: var(--header-height);position: fixed;top: 0;left: 0;display: flex;align-items: center;justify-content: space-between;padding: 0 1rem;background-color: var(--white-color);z-index: var(--z-fixed);transition: .5s}  .header_toggle{color: var(--first-color);font-size: 1.5rem;cursor: pointer}  .header_img{width: 35px;height: 35px;display: flex;justify-content: center;border-radius: 50%;overflow: hidden}  .header_img img{width: 40px}  .l-navbar{position: fixed;top: 0;left: -30%;width: var(--nav-width);height: 100vh;background-color: var(--first-color);padding: .5rem 1rem 0 0;transition: .5s;z-index: var(--z-fixed)}  .nav{height: 100%;display: flex;flex-direction: column;justify-content: space-between;overflow: hidden}  .nav_logo, .nav_link{display: grid;grid-template-columns: max-content max-content;align-items: center;column-gap: 1rem;padding: .5rem 0 .5rem 1.5rem}  .nav_logo{margin-bottom: 2rem}  .nav_logo-icon{font-size: 1.25rem;color: var(--white-color)}  .nav_logo-name{color: var(--white-color);font-weight: 700}  .nav_link{position: relative;color: var(--first-color-light);margin-bottom: 1.5rem;transition: .3s}  .nav_link:hover{color: var(--white-color)}  .nav_icon{font-size: 1.25rem}  .show{left: 0}  .body-pd{padding-left: calc(var(--nav-width) + 1rem)}  .active{color: var(--white-color)}  .active::before{content: '';position: absolute;left: 0;width: 2px;height: 32px;background-color: var(--white-color)}  .height-100{height:100vh}@media screen and (min-width: 768px){body{margin: calc(var(--header-height) + 1rem) 0 0 0;padding-left: calc(var(--nav-width) + 2rem)}  .header{height: calc(var(--header-height) + 1rem);padding: 0 2rem 0 calc(var(--nav-width) + 2rem)}  .header_img{width: 40px;height: 40px}  .header_img img{width: 45px}  .l-navbar{left: 0;padding: 1rem 1rem 0 0}  .show{width: calc(var(--nav-width) + 156px)}  .body-pd{padding-left: calc(var(--nav-width) + 188px)}}</style>
+</head>
+
+<body id="body-pd">
+<header class="header" id="header">
+    <div class="header_toggle"> <i class='fa-solid fa-bars' id="header-toggle"></i> </div>
+    <div class="header_img"> <img src="https://i.imgur.com/hczKIze.jpg" alt=""> </div>
+</header>
+<div class="l-navbar" id="nav-bar">
+    <nav class="nav">
+        <div> <a href="#" class="nav_logo"> <i class="fa-solid fa-notes-medical nav_logo-icon"></i> <span class="nav_logo-name">Out-Patient CMS</span> </a>
+            <div class="nav_list"> <a href="patientdashboard" class="nav_link"> <i class='fa-solid fa-gauge nav_icon'></i> <span class="nav_name">Dashboard</span> </a> <a href="patientappointments" class="nav_link active"> <i class='fa-regular fa-calendar-check nav_icon'></i> <span class="nav_name">Appointments</span> </a> <a href="patientreports" class="nav_link"> <i class='fa-regular fa-file nav_icon'></i> <span class="nav_name">Report</span> </a> <a href="patientprescriptions" class="nav_link"> <i class='fi fi-rr-notebook nav_icon'></i> <span class="nav_name">Prescription</span> </a> <a href="patientprofile" class="nav_link"> <i class='fi fi-rr-user nav_icon'></i> <span class="nav_name">Profile</span> </a> <a href="patientcontact" class="nav_link"> <i class='fa-regular fa-address-book nav_icon'></i> <span class="nav_name">Contact</span> </a> </div>
+        </div> <a href="#" class="nav_link"> <i class='fi fi-rr-exit av_icon'></i> <span class="nav_name">SignOut</span> </a>
+    </nav>
+</div>
+
+<!--Container Main start-->
+<div class="container" >
+    <img class="img-fluid rounded mx-auto d-block mb-2" width="150" src="img/profile.jpg" alt="">
+    <p class="text-center fs-6">Doctor Name: <small class="fs-6" th:text="${doctor.name}"></small></p>
+    <p class="text-center fs-6">Shift: <small class="fs-6" th:text="${doctor.slot}"></small></p>
+    <p class="text-center fs-6">Speciality: <small class="fs-6" th:text="${doctor.specialist}"></small></p>
+
+    <form action="/patientaddappointment" method="post">
+        <input type="hidden" name="doctor-name" th:value="${doctor.getName()}">
+        <input type="hidden" name="doctor" th:value="${doctor.getId()}">
+        <input type="hidden" name="shift" th:value="${doctor.getSlot()}" >
+        <div style="--nav-width: none!important;" >
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist" style="flex-direction: inherit;
+justify-content: inherit;">
+                <li class="nav-item" role="presentation">
+                    <input  onclick="date1()" class="btn nav-link " required id="pills-home-tab date-1" data-bs-toggle="pill" data-bs-target="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"  type="button"  />
+                    <input name="date-1" id="get-date-1"  type="hidden"  />
+
+                </li>
+                <li class="nav-item" role="presentation">
+                    <input onclick="date2()" name="date" class="nav-link" required id="pills-profile-tab date-2" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false"/>
+                    <input name="date-2" id="get-date-2"  type="hidden"  />
+                </li>
+                <li class="nav-item" role="presentation">
+                    <input onclick="date3()" name="date" class="nav-link" required id="pills-contact-tab date-3" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false"/>
+                    <input name="date-3" id="get-date-3"  type="hidden"  />
+                </li>
+
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show " id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">  <div class="row my-2">
+                    <div class="col text-center">
+                        <input type="radio" class="btn-check " name="slot" id="i1" autocomplete="off" value="slot1">
+                        <label class="btn btn-outline-primary" th:classappend="${slot1.get().getSlot_1() != 0? 'disabled': ''}"  th:if="${doctor.getSlot() == 'Morning'}" for="i1">09:00 AM - 09:15 AM</label>
+                        <label class="btn btn-outline-primary" th:classappend="${slot1.get().getSlot_1() != 0? 'disabled': ''}"  th:if="${doctor.getSlot() == 'Afternoon'}" for="i1">12:30 AM - 12:45 AM</label>
+                        <label class="btn btn-outline-primary" th:classappend="${slot1.get().getSlot_1() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Evening'}" for="i1">06:00 PM - 06:15 AM</label>
+
+                        <input type="radio" class="btn-check" name="slot" id="i2" autocomplete="off" value="slot2">
+                        <label class="btn btn-outline-primary" th:classappend="${slot1.get().getSlot_2() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Morning'}" for="i2">09:15 AM - 09:30 AM</label>
+                        <label class="btn btn-outline-primary" th:classappend="${slot1.get().getSlot_2() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Afternoon'}" for="i2">12:45 AM - 01:00 AM</label>
+                        <label class="btn btn-outline-primary" th:classappend="${slot1.get().getSlot_2() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Evening'}" for="i2">06:00 PM - 06:15 AM</label>
+
+                        <input type="radio" class="btn-check" name="slot" id="i3" autocomplete="off" value="slot3">
+                        <label class="btn btn-outline-primary" th:classappend="${slot1.get().getSlot_3() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Morning'}" for="i3">09:30 AM - 09:45 AM</label>
+                        <label class="btn btn-outline-primary" th:classappend="${slot1.get().getSlot_3() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Afternoon'}" for="i3">01:00 AM - 01:15 AM</label>
+                        <label class="btn btn-outline-primary" th:classappend="${slot1.get().getSlot_3() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Evening'}" for="i3">06:15 PM - 06:30 AM</label>
+
+                        <input type="radio" class="btn-check"  name="slot" id="i4" autocomplete="off" value="slot4">
+                        <label class="btn btn-outline-primary" th:classappend="${slot1.get().getSlot_4() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Morning'}" for="i4">09:45 AM - 10:00 AM</label>
+                        <label class="btn btn-outline-primary" th:classappend="${slot1.get().getSlot_4() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Afternoon'}" for="i4">12:00 AM - 12:15 AM</label>
+                        <label class="btn btn-outline-primary" th:classappend="${slot1.get().getSlot_4() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Evening'}" for="i4">06:30 PM - 06:45 AM</label>
+                    </div>
+                </div>
+                    <div class="row my-2">
+                        <div class="col text-center">
+                            <input type="radio" class="btn-check" name="slot" id="i5" autocomplete="off" value="slot5">
+                            <label class="btn btn-outline-primary" th:classappend="${slot1.get().getSlot_5() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Morning'}" for="i5">10:30 AM - 10:45 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot1.get().getSlot_5() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Afternoon'}" for="i5">09:00 AM - 09:15 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot1.get().getSlot_5() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Evening'}" for="i5">09:00 AM - 09:15 AM</label>
+
+                            <input type="radio" class="btn-check" name="slot" id="i6" autocomplete="off" value="slot6">
+                            <label class="btn btn-outline-primary" th:classappend="${slot1.get().getSlot_6() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Morning'}" for="i6">10:45 AM - 11:00 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot1.get().getSlot_6() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Afternoon'}" for="i6">09:00 AM - 09:15 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot1.get().getSlot_6() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Evening'}" for="i6">09:00 AM - 09:15 AM</label>
+
+                            <input type="radio" class="btn-check" name="slot" id="i7" autocomplete="off" value="slot7">
+                            <label class="btn btn-outline-primary" th:classappend="${slot1.get().getSlot_7() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Morning'}" for="i7">11:00 AM - 11:15 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot1.get().getSlot_7() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Afternoon'}" for="i7">09:00 AM - 09:15 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot1.get().getSlot_7() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Evening'}" for="i7">09:00 AM - 09:15 AM</label>
+
+                            <input type="radio" class="btn-check" name="slot" id="i8" autocomplete="off" value="slot8">
+                            <label class="btn btn-outline-primary" th:classappend="${slot1.get().getSlot_8() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Morning'}" for="i8">11:15 AM - 11:30 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot1.get().getSlot_8() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Afternoon'}" for="i8">09:00 AM - 09:15 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot1.get().getSlot_8() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Evening'}" for="i8">09:00 AM - 09:15 AM</label>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <input type="radio" class="btn-check" name="slot" id="i9" autocomplete="off" value="slot9">
+                            <label class="btn btn-outline-primary" th:classappend="${slot1.get().getSlot_9() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Morning'}" for="i9">11:30 AM - 11:45 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot1.get().getSlot_9() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Afternoon'}" for="i9">09:00 AM - 09:15 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot1.get().getSlot_9() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Evening'}" for="i9">09:00 AM - 09:15 AM</label>
+
+
+
+                            <input type="radio" class="btn-check" name="slot" id="i10" autocomplete="off" value="slot10">
+                            <label class="btn btn-outline-primary" th:classappend="${slot1.get().getSlot_10() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Morning'}" for="i10">11:45 AM - 12:00 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot1.get().getSlot_10() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Afternoon'}" for="i10">09:00 AM - 09:15 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot1.get().getSlot_10() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Evening'}" for="i10">09:00 AM - 09:15 AM</label>
+
+
+                            <input type="radio" class="btn-check" name="slot" id="i11" autocomplete="off" value="slot11">
+                            <label class="btn btn-outline-primary" th:classappend="${slot1.get().getSlot_11() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Morning'}" for="i11">12:00 PM - 12:15 PM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot1.get().getSlot_11() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Afternoon'}" for="i11">09:00 AM - 09:15 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot1.get().getSlot_11() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Evening'}" for="i11">09:00 AM - 09:15 AM</label>
+
+
+                            <input type="radio" class="btn-check" name="slot" id="i12" autocomplete="off" value="slot12">
+                            <label class="btn btn-outline-primary" th:classappend="${slot1.get().getSlot_12() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Morning'}" for="i12">12:15 PM - 12:30 M</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot1.get().getSlot_12() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Afternoon'}" for="i12">09:00 AM - 09:15 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot1.get().getSlot_12() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Evening'}" for="i12">09:00 AM - 09:15 AM</label>
+
+                        </div>
+                    </div></div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">  <div class="row my-2">
+                    <div class="col text-center">
+                        <input type="radio" class="btn-check" name="slot" id="j1" autocomplete="off" value="slot1">
+                        <label class="btn btn-outline-primary" th:classappend="${slot2.get().getSlot_1() != 0? 'disabled': ''}"  th:if="${doctor.getSlot() == 'Morning'}" for="j1">09:00 AM - 09:15 AM</label>
+                        <label class="btn btn-outline-primary" th:classappend="${slot2.get().getSlot_1() != 0? 'disabled': ''}"  th:if="${doctor.getSlot() == 'Afternoon'}" for="j1">12:30 AM - 12:45 AM</label>
+                        <label class="btn btn-outline-primary" th:classappend="${slot2.get().getSlot_1() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Evening'}" for="j1">06:00 PM - 06:15 AM</label>
+
+                        <input type="radio" class="btn-check" name="slot" id="j2" autocomplete="off" value="slot2">
+                        <label class="btn btn-outline-primary" th:classappend="${slot2.get().getSlot_2() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Morning'}" for="j2">09:15 AM - 09:30 AM</label>
+                        <label class="btn btn-outline-primary" th:classappend="${slot2.get().getSlot_2() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Afternoon'}" for="j2">12:45 AM - 01:00 AM</label>
+                        <label class="btn btn-outline-primary" th:classappend="${slot2.get().getSlot_2() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Evening'}" for="j2">06:00 PM - 06:15 AM</label>
+
+                        <input type="radio" class="btn-check" name="slot" id="j3" autocomplete="off" value="slot3">
+                        <label class="btn btn-outline-primary" th:classappend="${slot2.get().getSlot_3() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Morning'}" for="j3">09:30 AM - 09:45 AM</label>
+                        <label class="btn btn-outline-primary" th:classappend="${slot2.get().getSlot_3() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Afternoon'}" for="j3">01:00 AM - 01:15 AM</label>
+                        <label class="btn btn-outline-primary" th:classappend="${slot2.get().getSlot_3() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Evening'}" for="j3">06:15 PM - 06:30 AM</label>
+
+                        <input type="radio" class="btn-check"  name="slot" id="j4" autocomplete="off" value="slot4">
+                        <label class="btn btn-outline-primary" th:classappend="${slot2.get().getSlot_4() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Morning'}" for="j4">09:45 AM - 10:00 AM</label>
+                        <label class="btn btn-outline-primary" th:classappend="${slot2.get().getSlot_4() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Afternoon'}" for="j4">12:00 AM - 12:15 AM</label>
+                        <label class="btn btn-outline-primary" th:classappend="${slot2.get().getSlot_4() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Evening'}" for="j4">06:30 PM - 06:45 AM</label>
+                    </div>
+                </div>
+                    <div class="row my-2">
+                        <div class="col text-center">
+                            <input type="radio" class="btn-check" name="slot" id="j5" autocomplete="off" value="slot5">
+                            <label class="btn btn-outline-primary" th:classappend="${slot2.get().getSlot_5() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Morning'}" for="j5">10:30 AM - 10:45 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot2.get().getSlot_5() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Afternoon'}" for="j5">09:00 AM - 09:15 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot2.get().getSlot_5() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Evening'}" for="j5">09:00 AM - 09:15 AM</label>
+
+                            <input type="radio" class="btn-check" name="slot" id="j6" autocomplete="off" value="slot6">
+                            <label class="btn btn-outline-primary" th:classappend="${slot2.get().getSlot_6() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Morning'}" for="j6">10:45 AM - 11:00 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot2.get().getSlot_6() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Afternoon'}" for="j6">09:00 AM - 09:15 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot2.get().getSlot_6() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Evening'}" for="j6">09:00 AM - 09:15 AM</label>
+
+                            <input type="radio" class="btn-check" name="slot" id="j7" autocomplete="off" value="slot7">
+                            <label class="btn btn-outline-primary" th:classappend="${slot2.get().getSlot_7() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Morning'}" for="j7">11:00 AM - 11:15 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot2.get().getSlot_7() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Afternoon'}" for="j7">09:00 AM - 09:15 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot2.get().getSlot_7() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Evening'}" for="j7">09:00 AM - 09:15 AM</label>
+
+                            <input type="radio" class="btn-check" name="slot" id="j8" autocomplete="off" value="slot8">
+                            <label class="btn btn-outline-primary" th:classappend="${slot2.get().getSlot_8() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Morning'}" for="j8">11:15 AM - 11:30 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot2.get().getSlot_8() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Afternoon'}" for="j8">09:00 AM - 09:15 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot2.get().getSlot_8() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Evening'}" for="j8">09:00 AM - 09:15 AM</label>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <input type="radio" class="btn-check" name="slot" id="j9" autocomplete="off" value="slot9">
+                            <label class="btn btn-outline-primary" th:classappend="${slot2.get().getSlot_9() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Morning'}" for="j9">11:30 AM - 11:45 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot2.get().getSlot_9() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Afternoon'}" for="j9">09:00 AM - 09:15 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot2.get().getSlot_9() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Evening'}" for="j9">09:00 AM - 09:15 AM</label>
+
+                            <input type="radio" class="btn-check" name="slot" id="j10" autocomplete="off" value="slot10">
+                            <label class="btn btn-outline-primary" th:classappend="${slot2.get().getSlot_10() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Morning'}" for="j10">11:45 AM - 12:00 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot2.get().getSlot_10() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Afternoon'}" for="j10">09:00 AM - 09:15 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot2.get().getSlot_10() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Evening'}" for="j10">09:00 AM - 09:15 AM</label>
+
+                            <input type="radio" class="btn-check" name="slot" id="j11" autocomplete="off" value="slot11">
+                            <label class="btn btn-outline-primary" th:classappend="${slot2.get().getSlot_11() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Morning'}" for="j11">12:00 PM - 12:15 PM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot2.get().getSlot_11() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Afternoon'}" for="j11">09:00 AM - 09:15 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot2.get().getSlot_11() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Evening'}" for="j11">09:00 AM - 09:15 AM</label>
+
+                            <input type="radio" class="btn-check" name="slot" id="j12" autocomplete="off" value="slot12">
+                            <label class="btn btn-outline-primary" th:classappend="${slot2.get().getSlot_12() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Morning'}" for="j12">12:15 PM - 12:30 M</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot2.get().getSlot_12() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Afternoon'}" for="j12">09:00 AM - 09:15 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot2.get().getSlot_12() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Evening'}" for="j12">09:00 AM - 09:15 AM</label>
+                        </div>
+                    </div></div>
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">  <div class="row my-2">
+                    <div class="col text-center">
+                        <input type="radio" class="btn-check" name="slot" id="k1" autocomplete="off" value="slot1">
+                        <label class="btn btn-outline-primary" th:classappend="${slot3.get().getSlot_1() != 0? 'disabled': ''}"  th:if="${doctor.getSlot() == 'Morning'}" for="k1">09:00 AM - 09:15 AM</label>
+                        <label class="btn btn-outline-primary" th:classappend="${slot3.get().getSlot_1() != 0? 'disabled': ''}"  th:if="${doctor.getSlot() == 'Afternoon'}" for="k1">12:30 AM - 12:45 AM</label>
+                        <label class="btn btn-outline-primary" th:classappend="${slot3.get().getSlot_1() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Evening'}" for="k1">06:00 PM - 06:15 AM</label>
+
+                        <input type="radio" class="btn-check" name="slot" id="k2" autocomplete="off" value="slot2">
+                        <label class="btn btn-outline-primary" th:classappend="${slot3.get().getSlot_2() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Morning'}" for="k2">09:15 AM - 09:30 AM</label>
+                        <label class="btn btn-outline-primary" th:classappend="${slot3.get().getSlot_2() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Afternoon'}" for="k2">12:45 AM - 01:00 AM</label>
+                        <label class="btn btn-outline-primary" th:classappend="${slot3.get().getSlot_2() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Evening'}" for="k2">06:00 PM - 06:15 AM</label>
+
+                        <input type="radio" class="btn-check" name="slot" id="k3" autocomplete="off" value="slot3">
+                        <label class="btn btn-outline-primary" th:classappend="${slot3.get().getSlot_3() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Morning'}" for="k3">09:30 AM - 09:45 AM</label>
+                        <label class="btn btn-outline-primary" th:classappend="${slot3.get().getSlot_3() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Afternoon'}" for="k3">01:00 AM - 01:15 AM</label>
+                        <label class="btn btn-outline-primary" th:classappend="${slot3.get().getSlot_3() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Evening'}" for="k3">06:15 PM - 06:30 AM</label>
+
+                        <input type="radio" class="btn-check"  name="slot" id="k4" autocomplete="off" value="slot4">
+                        <label class="btn btn-outline-primary" th:classappend="${slot3.get().getSlot_4() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Morning'}" for="k4">09:45 AM - 10:00 AM</label>
+                        <label class="btn btn-outline-primary" th:classappend="${slot3.get().getSlot_4() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Afternoon'}" for="k4">12:00 AM - 12:15 AM</label>
+                        <label class="btn btn-outline-primary" th:classappend="${slot3.get().getSlot_4() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Evening'}" for="k4">06:30 PM - 06:45 AM</label>
+                    </div>
+                </div>
+                    <div class="row my-2">
+                        <div class="col text-center">
+                            <input type="radio" class="btn-check" name="slot" id="k5" autocomplete="off" value="slot5">
+                            <label class="btn btn-outline-primary" th:classappend="${slot3.get().getSlot_5() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Morning'}" for="k5">10:30 AM - 10:45 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot3.get().getSlot_5() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Afternoon'}" for="k5">09:00 AM - 09:15 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot3.get().getSlot_5() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Evening'}" for="k5">09:00 AM - 09:15 AM</label>
+
+                            <input type="radio" class="btn-check" name="slot" id="k6" autocomplete="off" value="slot6">
+                            <label class="btn btn-outline-primary" th:classappend="${slot3.get().getSlot_6() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Morning'}" for="k6">10:45 AM - 11:00 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot3.get().getSlot_6() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Afternoon'}" for="k6">09:00 AM - 09:15 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot3.get().getSlot_6() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Evening'}" for="k6">09:00 AM - 09:15 AM</label>
+
+                            <input type="radio" class="btn-check" name="slot" id="k7" autocomplete="off" value="slot7">
+                            <label class="btn btn-outline-primary" th:classappend="${slot3.get().getSlot_7() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Morning'}" for="k7">11:00 AM - 11:15 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot3.get().getSlot_7() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Afternoon'}" for="k7">09:00 AM - 09:15 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot3.get().getSlot_7() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Evening'}" for="k7">09:00 AM - 09:15 AM</label>
+
+                            <input type="radio" class="btn-check" name="slot" id="k8" autocomplete="off" value="slot8">
+                            <label class="btn btn-outline-primary" th:classappend="${slot3.get().getSlot_8() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Morning'}" for="k8">11:15 AM - 11:30 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot3.get().getSlot_8() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Afternoon'}" for="k8">09:00 AM - 09:15 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot3.get().getSlot_8() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Evening'}" for="k8">09:00 AM - 09:15 AM</label>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <input type="radio" class="btn-check" name="slot" id="k9" autocomplete="off" value="slot9">
+                            <label class="btn btn-outline-primary" th:classappend="${slot3.get().getSlot_9() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Morning'}" for="k9">11:30 AM - 11:45 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot3.get().getSlot_9() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Afternoon'}" for="k9">09:00 AM - 09:15 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot3.get().getSlot_9() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Evening'}" for="k9">09:00 AM - 09:15 AM</label>
+
+                            <input type="radio" class="btn-check" name="slot" id="k10" autocomplete="off" value="slot10">
+                            <label class="btn btn-outline-primary" th:classappend="${slot3.get().getSlot_10() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Morning'}" for="k10">11:45 AM - 12:00 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot3.get().getSlot_10() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Afternoon'}" for="k10">09:00 AM - 09:15 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot3.get().getSlot_10() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Evening'}" for="k10">09:00 AM - 09:15 AM</label>
+
+                            <input type="radio" class="btn-check" name="slot" id="k11" autocomplete="off" value="slot11">
+                            <label class="btn btn-outline-primary" th:classappend="${slot3.get().getSlot_11() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Morning'}" for="k11">12:00 PM - 12:15 PM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot3.get().getSlot_11() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Afternoon'}" for="k11">09:00 AM - 09:15 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot3.get().getSlot_11() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Evening'}" for="k11">09:00 AM - 09:15 AM</label>
+
+                            <input type="radio" class="btn-check" name="slot" id="k12" autocomplete="off" value="slot12">
+                            <label class="btn btn-outline-primary" th:classappend="${slot3.get().getSlot_12() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Morning'}" for="k12">12:15 PM - 12:30 M</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot3.get().getSlot_12() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Afternoon'}" for="k12">09:00 AM - 09:15 AM</label>
+                            <label class="btn btn-outline-primary" th:classappend="${slot3.get().getSlot_12() != 0? 'disabled': ''}" th:if="${doctor.getSlot() == 'Evening'}" for="k12">09:00 AM - 09:15 AM</label>
+                        </div>
+                    </div></div>
+                <div class="tab-pane fade" id="pills-disabled" role="tabpanel" aria-labelledby="pills-disabled-tab" tabindex="0">...</div>
+            </div>
+
+        </div>
+        <div class="row mt-3">
+            <div class="col text-center">
+                <button class="btn btn-success" type="submit">Sumbit</button>
+            </div>
+        </div>
+    </form>
+
+
+
+
+</div>
+<!--Container Main end-->
+
+<script type="text/javascript">
+    let date = new Date();
+    date.setDate(date.getDate() + 1);
+    document.getElementById("pills-home-tab date-1").value = date.toLocaleDateString()
+    document.getElementById("get-date-1").value = date.toLocaleDateString()
+
+    date.setDate(date.getDate() + 1);
+    document.getElementById("pills-profile-tab date-2").value = date.toLocaleDateString()
+    document.getElementById("get-date-2").value = date.toLocaleDateString()
+
+    date.setDate(date.getDate() + 1);
+    document.getElementById("pills-contact-tab date-3").value = date.toLocaleDateString()
+    document.getElementById("get-date-3").value = date.toLocaleDateString()
+
+    console.log(date)
+
+    function date1(){
+        let date = new Date();
+        date.setDate(date.getDate() + 1);
+        document.getElementById("get-date-1").value = date.toLocaleDateString()
+        document.getElementById("get-date-2").value = ''
+        document.getElementById("get-date-3").value = ''
+        console.log("date1 clicked")
+    }
+
+    function date2(){
+        let date = new Date();
+        date.setDate(date.getDate() + 2);
+        document.getElementById("get-date-1").value = ''
+        document.getElementById("get-date-2").value = date.toLocaleDateString()
+        document.getElementById("get-date-3").value = ''
+        console.log("date2 clicked")
+    }
+
+    function date3(){
+        let date = new Date();
+        date.setDate(date.getDate() + 3);
+        document.getElementById("get-date-1").value = ''
+        document.getElementById("get-date-2").value = ''
+        document.getElementById("get-date-3").value = date.toLocaleDateString()
+        console.log("date3 clicked")
+    }
+
+
+</script>
+
+<script  type='text/javascript'>document.addEventListener("DOMContentLoaded", function(event) {
+
+    const showNavbar = (toggleId, navId, bodyId, headerId) =>{
+        const toggle = document.getElementById(toggleId),
+            nav = document.getElementById(navId),
+            bodypd = document.getElementById(bodyId),
+            headerpd = document.getElementById(headerId)
+
+// Validate that all variables exist
+        if(toggle && nav && bodypd && headerpd){
+            toggle.addEventListener('click', ()=>{
+// show navbar
+                nav.classList.toggle('show')
+// change icon
+                toggle.classList.toggle('fa-xmark')
+// add padding to body
+                bodypd.classList.toggle('body-pd')
+// add padding to header
+                headerpd.classList.toggle('body-pd')
+            })
+        }
+    }
+
+    showNavbar('header-toggle','nav-bar','body-pd','header')
+
+    /*===== LINK ACTIVE =====*/
+    const linkColor = document.querySelectorAll('.nav_link')
+
+    function colorLink(){
+        if(linkColor){
+            linkColor.forEach(l=> l.classList.remove('active'))
+            this.classList.add('active')
+        }
+    }
+    linkColor.forEach(l=> l.addEventListener('click', colorLink))
+
+});</script>
+<script  type='text/javascript'>
+    var myLink = document.querySelectorAll('a[href="#"]');
+    myLink.forEach(function(link){
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+        });
+    });
+</script>
+<script src="http://localhost:2022/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

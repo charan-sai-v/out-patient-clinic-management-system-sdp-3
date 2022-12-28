@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Patient Login</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!--Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css" integrity="sha512-HHsOC+h3najWR7OKiGZtfhFIEzg5VRIPde0kB0bG2QRidTQqf+sbfcxCTB16AcFB93xMjnBIKE29/MjdzXE+qw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<!--Navbar-->
+<section id="navbar" class="mb-5">
+  <nav class="bg-light p-3 sticky-top border-primary border-bottom">
+    <div class="container">
+      <i class="fa-solid fa-notes-medical fs-4 d-inline"></i>
+      <a class="fs-5 nav-link d-inline" href="#" >Out - Patient</a>
+    </div>
+  </nav>
+</section>
+
+<!--Main-->
+<section id="main" class="">
+  <!--Main Container-->
+  <div class="container ">
+    <h2 class="text-center fw-bold">Welcome to Patient Login</h2>
+    <p class="text-center text-info mb-3" >Please login through your credentials</p>
+
+    <p class="text-center"></p>
+    <div class="mx-auto w-25 " style="max-width:100%;">
+      <h2 class="text-center mb-3">Login Form</h2>
+      <form action="patientcheck" method="post">
+        <div class="">
+          <div class="col-lg-12 form-group mb-3">
+            <input type="text" name="email" class="form-control rounded-0" placeholder="Email or Phone Number" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 form-group mb-3">
+            <input type="password" name="password" placeholder="Enter your Password" class="form-control rounded-0" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 form-group">
+            <input class="btn btn-primary w-100" type="submit" value="Submit">
+          </div>
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<!--Bootstrap JS Bundle -->
+<script src="../static/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

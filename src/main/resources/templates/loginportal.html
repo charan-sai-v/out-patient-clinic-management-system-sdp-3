@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Portal</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!--Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css" integrity="sha512-HHsOC+h3najWR7OKiGZtfhFIEzg5VRIPde0kB0bG2QRidTQqf+sbfcxCTB16AcFB93xMjnBIKE29/MjdzXE+qw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!--Navbar-->
+    <section id="navbar">
+      <nav class="bg-light p-3 sticky-top border-primary border-bottom">
+        <div class="container">
+          <i class="fa-solid fa-notes-medical fs-4 d-inline"></i>
+          <a class="fs-5 nav-link d-inline" href="#" >Out - Patient</a>
+        </div>
+      </nav>
+    </section>
+
+    <!--Main-->
+    <section id="main" class="">
+      <!--Main Container-->
+      <div class="container my-5">
+        <div class="h-100 p-5 rounded-3 mt-5">
+          <div class="mx-auto">
+            <h1 class="display-5 fw-bold fs-4 ms-4 text-center">Welcome to Our CMS Login Portal</h1>
+            <p class=" text-center alert alert-primary p-4 rounded-3">
+              Please choose your role
+            </p>
+          </div>
+
+
+        </div>
+        <div class="row">
+          <div class="col-md-3 my-4">
+            <div class="bg-light mx-auto py-5 h-auto">
+              <div class="mx-auto p-5 position-relative">
+                <i class="fa-regular fa-user fs-2 text-center position-absolute  start-50 translate-middle"></i>
+              </div>
+                <p class="text-center pb-2">Patient</p>
+              <div class="mx-auto position-relative pb-3">
+                <a class="position-absolute top-50 start-50 translate-middle" href="/patientlogin"><button class="btn btn-primary">Login</button></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 my-4">
+            <div class="bg-light mx-auto py-5 h-auto">
+              <div class="mx-auto p-5 position-relative">
+                <i class="fa-solid fa-user-doctor fs-2 text-center position-absolute  start-50 translate-middle"></i>
+              </div>
+              <p class="text-center pb-2">Doctor</p>
+              <div class="mx-auto position-relative pb-3">
+                <a class="position-absolute top-50 start-50 translate-middle" href="/doctorlogin"><button class="btn btn-primary">Login</button></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 my-4">
+            <div class="bg-light mx-auto py-5 h-auto">
+              <div class="mx-auto p-5 position-relative">
+                <i class="fa-solid fa-user fs-2 text-center position-absolute  start-50 translate-middle"></i>
+              </div>
+              <p class="text-center pb-2">Receptionist</p>
+              <div class="mx-auto position-relative pb-3">
+                <a class="position-absolute top-50 start-50 translate-middle" href="/receptionistlogin"><button class="btn btn-primary">Login</button></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 my-4">
+            <div class="bg-light mx-auto py-5 h-auto">
+              <div class="mx-auto p-5 position-relative">
+                <i class="fa-solid fa-user-secret fs-2 text-center position-absolute  start-50 translate-middle"></i>
+              </div>
+              <p class="text-center pb-2">Admin</p>
+              <div class="mx-auto position-relative pb-3">
+                <a class="position-absolute top-50 start-50 translate-middle" href="/adminlogin"><button class="btn btn-primary">Login</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+
+
+    <!--Bootstrap JS Bundle -->
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
